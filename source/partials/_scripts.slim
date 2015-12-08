@@ -1,0 +1,44 @@
+/[if lt IE 9]
+  == javascript_include_tag 'html5shiv.min.js', :type => nil
+== javascript_include_tag 'bundle', :type => nil
+
+/! Auto Link Maker
+javascript:
+  var _merchantSettings=_merchantSettings || [];_merchantSettings.push(['AT', '10l87c']);(function(){var autolink=document.createElement('script');autolink.type='text/javascript';autolink.async=true; autolink.src= ('https:' == document.location.protocol) ? 'https://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js' : 'http://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(autolink, s);})();
+
+- if current_article
+  /! Facebook JavaScript SDK
+  div#fb-root
+  javascript:
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&appId=264941413542272&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  /! Twitter Javascript
+  javascript:
+    !function(d,s,id){
+      var js,fjs=d.getElementsByTagName(s)[0];
+      if(!d.getElementById(id)){js=d.createElement(s);
+        js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);
+      }
+    }
+    (document,"script","twitter-wjs");
+  /! Pocket Javascript
+  javascript:
+    !function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");
+  /! Hatena Javascript
+  == javascript_include_tag 'http://b.st-hatena.com/js/bookmark_button.js', :type => nil, :charset => 'utf-8', :async => true, :defer => true
+  /! DISQUS
+  javascript:
+    var disqus_shortname = 'chocolateboard';
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  noscript
+    | Please enable JavaScript to view the
+    == link_to 'comments powered by Disqus.', 'https://disqus.com/?ref_noscript', :rel => 'nofollow'

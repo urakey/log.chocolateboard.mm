@@ -1,0 +1,68 @@
+//==============================================================================
+//  Utility: Mixin
+//==============================================================================
+
+//------------------------------------------------------------------------------
+//
+// 引数px相当のフォントサイズ相対で出力するMixin。
+//
+// @param size(require) Number - 出力したいフォントサイズを指定
+//
+//------------------------------------------------------------------------------
+@mixin fontSize($size) {
+  font-size: unquote(($size/16) + 'rem');
+}
+
+//------------------------------------------------------------------------------
+//
+// 指定行数で 3 点リード
+//
+// @param num(require) Number - 行数を指定
+//
+//------------------------------------------------------------------------------
+@mixin lineclamp($num) {
+  display: -webkit-box;
+  overflow: hidden;
+  width: 100%;
+  text-overflow: ellipsis;
+
+  -webkit-line-clamp: $num;
+  -webkit-box-orient: vertical;
+}
+
+//------------------------------------------------------------------------------
+//
+// テキストリンクの色とtext-decorationを指定するMixin。
+//
+// @param color01(require)      String  - リンク色 ex) $key-blue or #3498db
+// @param color02(optional)     String  - リンク色 :visited
+// @param underline01(optional) String  - text-decoration
+// @param underline02(optional) String  - text-decoration :hover
+// @param color03(optional)     String  - リンク色 :hover
+// @param opacity(optional)     Boolean - :hover 透過アニメーションの有無
+//
+//------------------------------------------------------------------------------
+@mixin linkColor($color01, $color02:$base-link-color-visited, $underline01:'underline', $underline02:'none', $color03:$color01, $opacity:false) {
+  a {
+  color: $color01;
+  text-decoration: unquote($underline01);
+
+    &:visited {
+      color: $color02;
+    }
+
+    &:hover {
+
+      @if $color03 {
+        color: $color03;
+      }
+      text-decoration: unquote($underline02);
+
+      @if $opacity {
+        @include transition-property(opacity);
+        @include transition-duration(.3s);
+        opacity: .6;
+      }
+    }
+  }
+}

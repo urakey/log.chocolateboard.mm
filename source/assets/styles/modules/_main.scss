@@ -1,0 +1,97 @@
+//==============================================================================
+//  Module: Main
+//==============================================================================
+
+.main {
+  float: left;
+  width: $content-width-main;
+  padding: 50px 0;
+  
+  @extend %clearfix;
+  @include linkColor($base-link-color, $base-link-color, 'underline', 'none', $base-link-color, true);
+  @include respondTo(large) {
+    float: none;
+    width: 100%;
+  }
+}
+
+.main__title {
+  margin: 0 0 50px;
+  @extend %title;
+}
+
+.main__pagination {
+  height: 3rem;
+  margin: 0 auto;
+
+  @include linkColor(white, white, none, none, $key-color-1);
+  ul {
+    position: relative;
+
+    @extend %resetlist;
+  }
+  li {
+    position: absolute;
+    top: 0;
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    &.prev {
+      left: 0;
+      a::before {
+        content: '\f053';
+      }
+    }
+    &.next {
+      right: 0;
+      a::before {
+        content: '\f054';
+      }
+    }
+  }
+  a {
+    line-height: 3rem;
+    display: block;
+    overflow: hidden;
+    width: 3rem;
+    height: 3rem;
+    background: $key-color-1;
+
+    @include border-radius(1.5rem);
+    &:hover {
+      background: white;
+
+      @include transition-property(color, background-color);
+      @include transition-duration(.3s);
+    }
+    &::before {
+      font-size: 1.3rem;
+      display: block;
+      margin: 0 auto;
+
+      @extend %icon;
+    }
+  }
+}
+
+.main--introduction {
+  padding: 0 0 100px;
+  @include linkColor($base-link-color, $base-link-color, 'underline', 'none', $base-link-color, true);
+}
+
+.main--introduction__title {
+  margin: $mlv1 0 2em;
+  @extend %title;
+}
+
+.main--introduction__list {
+  @extend %list;
+  time {
+    display: inline-block;
+    min-width: 6em;
+    margin-right: .5em;
+    vertical-align: baseline;
+
+    @extend %notes;
+  }
+}

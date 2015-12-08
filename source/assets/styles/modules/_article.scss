@@ -1,0 +1,367 @@
+//==============================================================================
+//  Module: Article
+//==============================================================================
+
+.article {
+}
+
+.article__title {
+  font-weight: normal;
+  line-height: 1.5;
+  margin-bottom: 0;
+
+  @include fontSize(28);
+
+  @include respondTo(small) {
+    @include fontSize(22);
+  }
+}
+
+.article__eyecatch {
+   margin: $mlv4 0;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  figcaption {
+    font-style: italic;
+    margin: .5em 0;
+
+    @include linkColor($key-color-2-ll, $key-color-2-ll);
+    @extend %notes;
+  }
+}
+
+.article__body {
+  margin: $mlv2 0 0;
+
+  @extend %clearfix;
+  h1, h2, h3, h4, h5, h6 {
+    & + p, & + ul {
+      margin-top: -.3em;
+    }
+  }
+  h2 {
+    font-weight: normal;
+    line-height: 1.2;
+    margin-top: $mlv2;
+    margin-bottom: $mlv4;
+    padding-bottom: .5em;
+    border-bottom: $border 1px solid;
+
+    @include fontSize(26);
+    &::before {
+      position: relative;
+      top: 0;
+      display: inline-block;
+      width: 0;
+      height: 5px;
+      margin-right: .5em;
+      content: '';
+      border-width: 6px;
+      border-style: solid;
+      border-color: $key-color-1 $key-color-1 transparent $key-color-1;
+    }
+  }
+  h3 {
+    font-weight: normal;
+    line-height: 1.2;
+    margin-top: $mlv3;
+    padding-bottom: .5em;
+    border-bottom: $border 1px solid;
+
+    @include fontSize(22);
+  }
+  h4 {
+    line-height: 1.2;
+    margin-top: $mlv4;
+    padding-left: .7em;
+    border-left: $border 5px solid;
+
+    @include fontSize(18);
+  }
+  h5, h6 {
+    line-height: 1.2;
+    margin-top: $mlv4;
+
+    @include fontSize(16);
+  }
+  hr {
+    height: 1em;
+    margin: $mlv2 auto;
+    opacity: .1;
+    border: none;
+    &::before {
+      display: block;
+      height: 100%;
+      content: '\0020';
+      background-image: inline-image('svg/hr.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+
+      @include background-size(contain);
+    }
+  }
+  strong {
+    padding: 0 .3em;
+    border-bottom: $base-color 1px dotted;
+    background: $key-color-2-lll;
+  }
+  em {
+    font-style: normal;
+    padding: 0 .3em;
+    background: $key-color-2-lll;
+  }
+  mark {
+    // padding: 0 .2em;
+    // background: $key-yellow + 150;
+  }
+  ins {
+    border-bottom: $base-color 1px double;
+  }
+  code {
+    font-family: $code-font;
+    font-size: 12px;
+    margin: 0 3px;
+    padding: 2px 4px;
+    white-space: normal;
+    border: $border 1px solid;
+    background: $background;
+
+    @extend %radius;
+  }
+  pre {
+    line-height: 1.2;
+    overflow: auto;
+    margin: $mlv4 0 $mlv4 $mlv5;
+    padding: 20px;
+
+    @extend %base;
+    code {
+      margin: 0;
+      padding: 0;
+      white-space: pre-wrap;
+      white-space: pre;
+      border: none;
+      background: none;
+    }
+    @include respondTo(large) {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  ul {
+    margin: $mlv4 0 $mlv4 $mlv5;
+
+    @extend %resetlist;
+    li {
+      &::before {
+        margin-right: .3em;
+        content: '\f1db';
+        color: $key-color-1;
+
+        @extend %icon;
+      }
+    }
+    @include respondTo(large) {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  ol {
+    margin: $mlv4 0 $mlv4 $mlv5;
+
+    @include respondTo(large) {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  table {
+    margin: $mlv4 0 $mlv4 $mlv5;
+    border-bottom: $border 1px solid;
+    border-left: $border 1px solid;
+    background: white;
+    th {
+      font-weight: bold;
+      min-width: 3em;
+      padding: 10px;
+      white-space: nowrap;
+      border-top: $border 1px solid;
+      border-right: $border 1px solid;
+      background: $background;
+    }
+    td {
+      padding: 10px;
+      border-top: $border 1px solid;
+      border-right: $border 1px solid;
+    }
+
+    @include respondTo(medium) {
+      table {
+        overflow: auto;
+      }
+      // th, td {
+      //   display: block;
+      //   box-sizing: border-box;
+      //   width: 100%;
+      // }
+    }
+    @include respondTo(large) {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  figure {
+    max-width: 100%;
+    margin: $mlv4 0 $mlv4 $mlv5;
+    img {
+      max-width: 100%;
+      min-height: 176px;
+      @include box-shadow(rgba($key-color-2, .2) 1px 1px 5px -1px);
+    }
+    figcaption {
+      font-style: italic;
+      margin: .5em 0;
+
+      @include linkColor($key-color-2-ll, $key-color-2-ll);
+      @extend %notes;
+    }
+    @include respondTo(large) {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  blockquote {
+    position: relative;
+    margin: $mlv4 0 $mlv4 $mlv5;
+
+    @extend %base;
+    @include fontSize(14);
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 10px;
+      content: '\f10d';
+      color: $key-color-2-ll;
+
+      @include fontSize(30);
+      @extend %icon;
+    }
+    &::after {
+      position: absolute;
+      right: 10px;
+      bottom: 0;
+      content: '\f10e';
+      color: $key-color-2-ll;
+
+      @include fontSize(30);
+      @extend %icon;
+    }
+    cite {
+      @extend %notes;
+      a {
+        padding-left: 0.5em;
+      }
+      &::before {
+        content: '\002014';
+      }
+    }
+
+    @include respondTo(large) {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}
+
+.article__footer {
+  color: $key-color-2-ll;
+
+  @include fontSize(12);
+  @include linkColor($key-color-2-ll, $key-color-2-ll, 'none', 'none', $key-color-2-ll, true);
+  ul {
+    @extend %resetlist;
+  }
+  li {
+    display: inline-block;
+    letter-spacing: .05em;
+
+    & + li {
+      margin-left: 1rem;
+    }
+
+    &::before {
+      margin: 0 5px 0 0;
+      color: $key-color-1;
+
+      @extend %icon;
+    }
+  }
+  span {
+    display: none;
+  }
+}
+.article__footerTime::before {
+  content: '\f073';
+}
+.article__footerCategories::before {
+  content: '\f07b';
+}
+.article__footerTags::before {
+  content: '\f02c';
+}
+
+.article__section {
+}
+
+.article__sectionTitle {
+  margin: $mlv1 0 2em;
+
+  @extend %title;
+}
+
+.article__sectionList {
+  @extend %list;
+}
+
+.article__sectionShare {
+  display: table;
+  width: 100%;
+  text-align: center;
+  border: $border 1px solid;
+
+  @include box-sizing(border-box);
+  @extend %resetlist;
+  @extend %radius;
+
+  li {
+    line-height: 1;
+    display: table-cell;
+    min-width: 80px;
+    padding: 10px;
+    vertical-align: top;
+
+    @include box-sizing(border-box);
+    &:nth-child(odd) {
+      background: $background;
+    }
+    &:nth-child(even) {
+      background: white;
+    }
+  }
+ @include respondTo(medium) {
+    font-size: 0;
+    li {
+      display: inline-block;
+      width: 50%;
+      &:nth-child(1), &:nth-child(4) {
+        background: $background;
+      }
+      &:nth-child(2), &:nth-child(3) {
+        background: white;
+      }
+    }
+  }
+}

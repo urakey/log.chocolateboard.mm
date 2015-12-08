@@ -1,0 +1,22 @@
+//==============================================================================
+//  Module: Content
+//==============================================================================
+
+.contents {
+  width: $content-width;
+  min-width: $content-width;
+  margin: 0 auto;
+  padding: 0 30px;
+
+  @extend %clearfix;
+  @include respondTo(large) {
+    width: 100%;
+    min-width: 100%;
+    padding: 0 20px;
+
+    @include box-sizing(border-box);
+  }
+  @include respondTo(small) {
+    padding: 0 15px;
+  }
+}

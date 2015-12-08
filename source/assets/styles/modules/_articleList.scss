@@ -1,0 +1,96 @@
+//==============================================================================
+//  Module: Article list
+//==============================================================================
+
+.articleList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include display-flex;
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+  @include align-items(flex-start);
+  @include justify-content(space-between);
+}
+
+.articleList__item {
+  width: 49%;
+  padding-bottom: 2rem;
+
+  @include respondTo(medium) {
+    width: 100%;
+  }
+}
+
+//
+// .article--orderList {
+//   width: 49%;
+//   margin-bottom: 20px;
+//
+//   @include box-sizing(border-box);
+//
+//   &:nth-child(even) {
+//     float: left;
+//   }
+//   &:nth-child(odd) {
+//     float: right;
+//   }
+//
+//   @include respondTo(medium) {
+//     width: 100%;
+//
+//     &:nth-child(even) {
+//       float: none;
+//     }
+//     &:nth-child(odd) {
+//       float: none;
+//       margin-left: 0;
+//     }
+//   }
+// }
+//
+// .article--orderList__eyecatch {
+//   margin: 0 0 $mlv5;
+//
+//   background-image: inline-image('svg/bg.svg');
+//   background-repeat: repeat;
+//   background-position: center center;
+//
+//   img {
+//     width: 100%;
+//     height: auto;
+//   }
+// }
+//
+// .article--orderList__eyecatch--noimage {
+//   @extend .article--orderList__eyecatch;
+//
+//   img {
+//     opacity: 0;
+//   }
+// }
+//
+// .article--orderList__title {
+//   font-weight: normal;
+//   line-height: 1.5;
+//   height: 3em;
+//   margin: 0;
+//
+//   @include fontSize(18);
+//   @include lineclamp(2);
+//   @include linkColor($base-color, $base-color, 'none', 'none', $base-color, true);
+// }
+//
+// .article--orderList__body {
+//   margin: .5em 0;
+//
+//   @extend %notes;
+//
+//   p {
+//     margin: 0;
+//     height: 3em;
+//
+//     @include lineclamp(2);
+//   }
+// }

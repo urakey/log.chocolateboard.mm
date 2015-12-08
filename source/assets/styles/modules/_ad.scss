@@ -1,0 +1,48 @@
+//==============================================================================
+//  Module: AD
+//==============================================================================
+
+.ad--300 {
+  text-align: center;
+
+  ins {
+    min-width: 300px;
+    display: inline-block;
+  }
+
+  @include respondTo(large) {
+    width: 100%;
+    max-width: 800px;
+  }
+}
+
+.ad--125 {
+  ul {
+    max-width: 300px;
+    margin: 0 auto;
+
+    @extend %resetlist;
+    @extend %clearfix;
+    li {
+      float: left;
+      margin-top: 10px;
+      padding: 10px;
+      background: $background;
+      &:nth-child(1), &:nth-child(2) {
+        margin-top: 0;
+      }
+      &:nth-child(2n) {
+        margin-left: 9px;
+      }
+    }
+    @include respondTo(small) {
+      li {
+        margin-top: 7px;
+        padding: 8px;
+        &:nth-child(2n) {
+          margin-left: 7px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+//==============================================================================
+//  Module: Class
+//==============================================================================
+
+.assistive { display: none; }
+
+.notes {
+  @extend %notes;
+  &::before {
+    content: '※ ';
+  }
+}
+
+.download, .appstore {
+  @extend %clearfix;
+  @extend %base;
+  dt {
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+  dd {
+    margin: 0;
+    padding: 0 0 0 10px;
+    border-left: $border 3px solid;
+    span {
+      margin-right: 1em;
+      &::after {
+        content: ' :';
+      }
+    }
+    &.note {
+      @extend %notes;
+    }
+  }
+  dd + dd {
+    padding-top: .5em;
+  }
+  .btn {
+    @extend %btn;
+    @include respondTo(small) {
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+}
+
+.download {
+  $icon: ps ai fw pdf zip;
+  $length: length($icon);
+  p[data-file] {
+    float: left;
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    background-image: inline-image($image);
+    background-repeat: no-repeat;
+
+    @include background-size(60px auto);
+    @extend %sprite;
+  }
+  @for $i from 1 through $length {
+    p[data-file='#{nth($icon, $i)}'] {
+      $num: $i - 1;
+      $top: -60 * $num;
+      background-position: left $top;
+    }
+  }
+  dl {
+    margin: 0 0 2em 80px;
+  }
+  .btn {
+    margin: 0 0 0 80px;
+  }
+}
+
+.appstore {
+  div[data-file='appstore'] {
+    float: left;
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    padding: 20px;
+    background: white;
+  }
+  dl {
+    margin: 0 0 2em 120px;
+  }
+  .btn {
+    margin: 0 0 0 120px;
+  }
+}
