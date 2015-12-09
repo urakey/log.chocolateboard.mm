@@ -6,7 +6,7 @@
   float: left;
   width: $content-width-main;
   padding: 50px 0;
-  
+
   @extend %clearfix;
   @include linkColor($base-link-color, $base-link-color, 'underline', 'none', $base-link-color, true);
   @include respondTo(large) {
@@ -21,77 +21,34 @@
 }
 
 .main__pagination {
-  height: 3rem;
-  margin: 0 auto;
+  text-align: center;
+}
 
-  @include linkColor(white, white, none, none, $key-color-1);
-  ul {
-    position: relative;
+.main__pagination-prev {
+  display: inline-block;
+  color: $key-color-2-ll;
 
-    @extend %resetlist;
-  }
-  li {
-    position: absolute;
-    top: 0;
-    display: inline-block;
-    width: 3rem;
-    height: 3rem;
-    &.prev {
-      left: 0;
-      a::before {
-        content: '\f053';
-      }
-    }
-    &.next {
-      right: 0;
-      a::before {
-        content: '\f054';
-      }
-    }
-  }
-  a {
-    line-height: 3rem;
-    display: block;
-    overflow: hidden;
-    width: 3rem;
-    height: 3rem;
-    background: $key-color-1;
+  a::before,
+  span::before {
+    @extend %icon;
 
-    @include border-radius(1.5rem);
-    &:hover {
-      background: white;
-
-      @include transition-property(color, background-color);
-      @include transition-duration(.3s);
-    }
-    &::before {
-      font-size: 1.3rem;
-      display: block;
-      margin: 0 auto;
-
-      @extend %icon;
-    }
+    content: "\f100";
   }
 }
 
-.main--introduction {
-  padding: 0 0 100px;
-  @include linkColor($base-link-color, $base-link-color, 'underline', 'none', $base-link-color, true);
-}
+.main__pagination-next {
+  display: inline-block;
+  color: $key-color-2-ll;
 
-.main--introduction__title {
-  margin: $mlv1 0 2em;
-  @extend %title;
-}
+  a::after,
+  span::after {
+    @extend %icon;
 
-.main--introduction__list {
-  @extend %list;
-  time {
-    display: inline-block;
-    min-width: 6em;
-    margin-right: .5em;
-    vertical-align: baseline;
-
-    @extend %notes;
+    content: "\f101";
   }
+}
+
+.main__pagination-number {
+  display: inline-block;
+  margin: 0 2rem;
 }
