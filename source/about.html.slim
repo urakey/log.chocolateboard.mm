@@ -11,14 +11,20 @@ layout: layout_page
     | Index
   ul
     li
-      == link_to 'About this website.', '#website'
-    li
       == link_to 'Self introduction.', '#profile'
     li
-      == link_to 'Getting in touch.', '#contact'
+      == link_to 'About this website.', '#website'
+    li
+      == link_to 'Website recipe.', '#recipe'
 
   hr
-
+  
+  section#profile
+    h2
+      | Self introduction.
+    p 
+      == link_to '自己紹介はここにまとめました → [ About :: chocolateboard. ]', "#{portfolio_url}/about/#profile"
+      
   section#website
     h2
       | About this website.
@@ -48,6 +54,7 @@ layout: layout_page
     p.link
       == link_to 'プライバシーポリシーについてはこちら', '/privacy/'
 
+  section#recipe
     h2
       | Recipe
     h3
@@ -101,88 +108,3 @@ layout: layout_page
       li
         a[href="https://pages.github.com/" target="_blank" rel="nofollow"]
           | GitHub Pages
-
-  section#profile
-    h2
-      | Self introduction.
-    h3
-      | Aki Fukayama
-    p
-      | 渋谷で働いています。UI designer + Front-end engineer です。個人的に Swift 入門中です。
-    p
-      | インターネットでは主に
-      em<>
-        | akey
-      | or
-      em<>
-        | urakey
-      | というアカウントを取得しています。
-    p
-      | 岩手県盛岡市出身、東京都在住、実家は仙台。
-      br
-      | 好きなものはチョコレートとコーヒーとねことクワズイモとガジュマルと文具。漫画と小説もスキです。
-    p
-      | cafe staff → apparel → apparel recycle → designer + ME → UI designer + Front-end engineer（※いまここ）
-    p
-      | 人との縁を大切に、気の赴くままに生きてきました。
-      br
-      | いろんな人に出会えてよかったー。と思っています。
-
-    h3
-      | Tools
-    p
-      | デザインは主に
-      em<>
-        | Sketch
-      | or
-      em<>
-        | Photoshop
-      | で行っています。
-    p
-      | コーディングに使用するエディタは
-      em<>
-        | Atom
-      | or
-      em<>
-        | Sublime Text</em>
-      | です。タスクランナーは
-      em<>
-        | gulp
-      | or
-      em<>
-        | Grunt
-      | を使うことが多いです。HTML は基本的に
-      em<>
-        | Emmet
-      | で書きます。静的なページを作るときは
-      em<>
-        | ECT
-      | か
-      em<>
-        | EJS
-      | か
-      em<>
-        | SWIG
-      | をテンプレートエンジンとして使うことが多いです。CSSは
-      em<>
-        | Sass
-      | +
-      em<>
-        | Bourbon
-      | or
-      em<>
-        | Compass
-      | で書いています。
-
-  section#contact
-    h2
-      | Getting in touch.
-    p
-      | サイト本体のお問い合わせフォーム、または SNS からご連絡ください ;D
-    ul
-      li
-        == link_to 'chocolateboard', portfolio_url
-      li
-        == link_to 'Twitter', twitter_url
-      li
-        == link_to 'Facebook', facebook_url
