@@ -17,7 +17,7 @@
    */
   function init()
   {
-    $('a[href^=#]').smoothScroll({
+    $('a[href^="#"]').smoothScroll({
       play: -40,
       duration: 500,
       easing: 'easeOutQuad',
