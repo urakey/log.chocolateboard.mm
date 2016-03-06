@@ -12,9 +12,8 @@ eyecatchCap_link: 'https://github.com/urakey/akpalet.itermcolors'
 
 iTerm2 のカラースキームをつくりました。
 ちょっとまぶしい気もする...
-
 しばらく使ってみつつ調整しようと思います。
 
-GitHub 置いてありますので気に入っていただけた方はご自由にどうぞ ;D
+GitHub に置いてありますので気に入っていただけた方はご自由にどうぞ ;D
 
 - [urakey/akpalet.itermcolors](https://github.com/urakey/akpalet.itermcolors)
