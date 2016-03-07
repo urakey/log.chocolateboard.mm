@@ -1,6 +1,6 @@
 ---
-title: 'iTerm2: iTerm のカラースキーム'
-date: 2016-03-06
+title: 'iTerm2: iTerm のカラースキームを作った'
+date: 2016-03-05
 category: Coding
 tags: iterm, Themes
 published: true
@@ -10,9 +10,8 @@ eyecatchCap: 'akpalet.itermcolors'
 eyecatchCap_link: 'https://github.com/urakey/akpalet.itermcolors'
 ---
 
-iTerm2 のカラースキームをつくりました。
-ちょっとまぶしい気もする...
-しばらく使ってみつつ調整しようと思います。
+iTerm2 のカラースキームをつくりました。可愛い感じにしました。
+ちょっとまぶしい気もする...しばらく使ってみつつ調整しようと思います。
 
 GitHub に置いてありますので気に入っていただけた方はご自由にどうぞ ;D
 

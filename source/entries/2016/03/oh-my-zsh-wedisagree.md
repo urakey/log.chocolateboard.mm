@@ -1,6 +1,6 @@
 ---
 title: 'zsh: oh-my-zsh の wedisagree というテーマを使うことにした'
-date: 2016-03-05
+date: 2016-03-06
 category: Coding
 tags: zsh, oh-my-zsh, Themes
 published: true
@@ -22,3 +22,5 @@ git のステータスがお天気マークで表示されるのがかわいい�
 - [Quick Reference for Git Mark of oh-my-zsh 'wedisagree' Theme](http://qiita.com/maangie/items/2ac2e26a39a0d2d9cc79)
 
 いまのとこ気に入ってる。
+
+キャプチャで使用しているカラースキームについては[こちら](/itermcolors/)。
