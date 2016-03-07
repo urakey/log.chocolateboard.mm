@@ -3,69 +3,70 @@
 //==============================================================================
 
 .side {
-  float: right;
-  width: $content-width-sub;
-  padding: 50px 0;
+  @include link-color($base-link-color, $base-link-color, "underline", "none", $base-link-color, true);
 
-  @include linkColor($base-link-color, $base-link-color, 'underline', 'none', $base-link-color, true);
-  aside, nav {
-    @include fontSize(14);
-  }
-
-  @include respondTo(large) {
+  @include media-queries(large) {
     float: none;
     width: 100%;
     padding-top: 0;
   }
+
+  float: right;
+  width: $content-width-sub;
+  padding: 50px 0;
+  aside,
+  nav {
+    @include font-size(14);
+  }
 }
 
 .side__title {
-  margin: $mlv2 0 2em;
-
   @extend %title;
+
+  margin: $mlv2 0 2em;
 }
 
 .side__list {
   @extend %list;
-  @include fontSize(12);
+  @include font-size(12);
 }
 
 .side__list--tags {
+  @extend %resetlist;
+  @include font-size(12);
   //  @extend .side__list;
   //
   //  li::before {
-  //    content: '\f02b';
+  //    content: "\f02b";
   //  }
+
   padding-left: 0;
   list-style: none;
-
-  @extend %resetlist;
-  @include fontSize(12);
 
   li {
     display: inline-block;
     margin: 0 0 4px 14px;
   }
   a {
-    font-size: 12px;
-    line-height: 12px;
+    @include border-radius(0 3px 3px 0);
+
     position: relative;
     display: block;
     padding: 6px 10px;
-    text-decoration: none;
+    font-size: 12px;
+    line-height: 12px;
     color: white;
+    text-decoration: none;
     background: $key-color-1;
-
-    @include border-radius(0 3px 3px 0);
     &:visited {
       color: white;
     }
     &:hover {
-      opacity: 0.7;
-      color: white;
-
       @include transition-property(opacity);
-      @include transition-duration(0.5s);
+      @include transition-duration(.5s);
+
+      color: white;
+      opacity: .7;
     }
     &::before {
       position: absolute;
@@ -74,22 +75,22 @@
       display: block;
       width: 0;
       height: 4px;
-      content: '';
-      border-width: 10px;
-      border-style: solid;
       border-color: transparent $key-color-1 transparent transparent;
+      border-style: solid;
+      border-width: 10px;
+      content: "";
     }
     &::after {
+      @include border-radius(2px);
+
       position: absolute;
       top: 10px;
       left: -4px;
       display: block;
       width: 4px;
       height: 4px;
-      content: '';
       background: white;
-
-      @include border-radius(2px);
+      content: "";
     }
   }
 }
@@ -97,47 +98,47 @@
 .side__list--categories {
   @extend .side__list;
   li::before {
-    content: '\f07b';
+    content: "\f07b";
   }
 }
 
 .side__list--archives {
   @extend .side__list;
   li::before {
-    content: '\f187';
+    content: "\f187";
   }
 }
 
 .side__list--hatena {
   @extend .side__list;
   li::before {
-    content: '\f097';
+    content: "\f097";
   }
 }
 
 .side__recommend {
-  line-height: 1.5;
-  margin: 15px 0;
-  padding: 15px 10px 10px;
-
   @extend %base;
-  figure {
-    margin: 0 0 10px;
 
+  padding: 15px 10px 10px;
+  margin: 15px 0;
+  line-height: 1.5;
+  figure {
     @extend %clearfix;
+
+    margin: 0 0 10px;
     img {
+      @include box-shadow(rgba($key-color-2, .2) 1px 1px 5px -1px);
+
       float: left;
       width: 100px;
-
-      @include box-shadow(rgba($key-color-2, 0.2) 1px 1px 5px -1px);
     }
     figcaption {
       margin-left: 120px;
     }
   }
   p {
-    margin: 0;
-
     @extend %notes;
+
+    margin: 0;
   }
 }

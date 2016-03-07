@@ -2,30 +2,33 @@
 //  Module: Class
 //==============================================================================
 
-.assistive { display: none; }
+.assistive {
+  display: none;
+}
 
 .notes {
   @extend %notes;
   &::before {
-    content: '※ ';
+    content: "※ ";
   }
 }
 
-.download, .appstore {
+.download,
+.appstore {
   @extend %clearfix;
   @extend %base;
   dt {
-    font-weight: bold;
     margin-bottom: 1em;
+    font-weight: bold;
   }
   dd {
-    margin: 0;
     padding: 0 0 0 10px;
+    margin: 0;
     border-left: $border 3px solid;
     span {
       margin-right: 1em;
       &::after {
-        content: ' :';
+        content: " :";
       }
     }
     &.note {
@@ -37,7 +40,7 @@
   }
   .btn {
     @extend %btn;
-    @include respondTo(small) {
+    @include media-queries(small) {
       width: 100%;
       margin: 0 auto;
       text-align: center;
@@ -49,20 +52,21 @@
   $icon: ps ai fw pdf zip;
   $length: length($icon);
   p[data-file] {
+    @include background-size(60px auto);
+    @extend %sprite;
+
     float: left;
     width: 60px;
     height: 60px;
     margin: 0;
     background-image: inline-image($image);
     background-repeat: no-repeat;
-
-    @include background-size(60px auto);
-    @extend %sprite;
   }
   @for $i from 1 through $length {
-    p[data-file='#{nth($icon, $i)}'] {
+    p[data-file="#{nth($icon, $i)}"] {
       $num: $i - 1;
       $top: -60 * $num;
+
       background-position: left $top;
     }
   }
@@ -75,12 +79,12 @@
 }
 
 .appstore {
-  div[data-file='appstore'] {
+  div[data-file="appstore"] {
     float: left;
     width: 60px;
     height: 60px;
-    margin: 0;
     padding: 20px;
+    margin: 0;
     background: white;
   }
   dl {

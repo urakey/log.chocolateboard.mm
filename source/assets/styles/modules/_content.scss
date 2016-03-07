@@ -3,20 +3,20 @@
 //==============================================================================
 
 .contents {
-  width: $content-width;
-  min-width: $content-width;
-  margin: 0 auto;
-  padding: 0 30px;
-
   @extend %clearfix;
-  @include respondTo(large) {
+  @include media-queries(large) {
+    @include box-sizing(border-box);
+
     width: 100%;
     min-width: 100%;
     padding: 0 20px;
-
-    @include box-sizing(border-box);
   }
-  @include respondTo(small) {
+  @include media-queries(small) {
     padding: 0 15px;
   }
+
+  width: $content-width;
+  min-width: $content-width;
+  padding: 0 30px;
+  margin: 0 auto;
 }

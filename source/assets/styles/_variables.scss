@@ -17,9 +17,9 @@ $key-color-2-llll: lighten($key-color-2, 65%);
 $key-color-2-d:    darken($key-color-2, 5%);
 
 // Content Base Setting
-$base-font: 'PT Sans', Helvetica, Arial, 'YuGothic', 'Kozuka Gothic std', sans-serif;
-$code-font: 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', Monaco, monospace;
-$logo-font: 'PT Sans', sans-serif;
+$base-font: "PT Sans", Helvetica, Arial, "YuGothic", "Kozuka Gothic std", sans-serif;
+$code-font: "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, monospace;
+$logo-font: "Viga", sans-serif;
 
 $base-background:         white;
 $base-color:              $key-color-2;
@@ -32,7 +32,7 @@ $content-width-sub:  300px;
 
 $background: $key-color-2-llll;
 $border:     $key-color-2-lll;
-$image: 'cmn_sprite_icon.png' !default;
+$image: "cmn_sprite_icon.png" !default;
 $break-large:  990px;
 $break-medium: 700px;
 $break-small:  480px;

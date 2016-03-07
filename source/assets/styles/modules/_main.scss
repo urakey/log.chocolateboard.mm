@@ -3,21 +3,22 @@
 //==============================================================================
 
 .main {
-  float: left;
-  width: $content-width-main;
-  padding: 50px 0;
-
   @extend %clearfix;
-  @include linkColor($base-link-color, $base-link-color, 'underline', 'none', $base-link-color, true);
-  @include respondTo(large) {
+  @include link-color($base-link-color, $base-link-color, "underline", "none", $base-link-color, true);
+  @include media-queries(large) {
     float: none;
     width: 100%;
   }
+
+  float: left;
+  width: $content-width-main;
+  padding: 50px 0;
 }
 
 .main__title {
-  margin: 0 0 50px;
   @extend %title;
+
+  margin: 0 0 50px;
 }
 
 .main__pagination {

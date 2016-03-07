@@ -3,12 +3,13 @@
 //==============================================================================
 
 .searchbox {
-  display: table;
-  width: 100%;
-
   @include box-sizing(border-box);
   @extend %base;
+
+  display: table;
+  width: 100%;
 }
+
 .searchbox__text {
   display: table-cell;
   width: 80%;
@@ -16,22 +17,22 @@
   input[name="q"],
   input[type="text"] {
     width: 98%;
-    margin-right: 5px;
     padding: 8px 10px;
-    border: $border 1px solid;
-
+    margin-right: 5px;
     background-position: 5% 50% !important;
+    border: $border 1px solid;
   }
 }
+
 .searchbox__submit {
   display: table-cell;
   width: 20%;
 
   input[type="submit"] {
+    @extend %btn;
+
     width: 100%;
     padding: 5px 10px;
     border: none;
-
-    @extend %btn;
   }
 }

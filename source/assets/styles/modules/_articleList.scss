@@ -3,24 +3,24 @@
 //==============================================================================
 
 .articleList {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-
   @include display-flex;
   @include flex-direction(row);
   @include flex-wrap(wrap);
   @include align-items(flex-start);
   @include justify-content(space-between);
+
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 .articleList__item {
-  width: 49%;
-  padding-bottom: 2rem;
-
-  @include respondTo(medium) {
+  @include media-queries(medium) {
     width: 100%;
   }
+
+  width: 49%;
+  padding-bottom: 2rem;
 }
 
 //
@@ -37,7 +37,7 @@
 //     float: right;
 //   }
 //
-//   @include respondTo(medium) {
+//   @include media-queries(medium) {
 //     width: 100%;
 //
 //     &:nth-child(even) {
@@ -53,7 +53,7 @@
 // .article--orderList__eyecatch {
 //   margin: 0 0 $mlv5;
 //
-//   background-image: inline-image('svg/bg.svg');
+//   background-image: inline-image("svg/bg.svg");
 //   background-repeat: repeat;
 //   background-position: center center;
 //
@@ -77,9 +77,9 @@
 //   height: 3em;
 //   margin: 0;
 //
-//   @include fontSize(18);
+//   @include font-size(18);
 //   @include lineclamp(2);
-//   @include linkColor($base-color, $base-color, 'none', 'none', $base-color, true);
+//   @include link-color($base-color, $base-color, "none", "none", $base-color, true);
 // }
 //
 // .article--orderList__body {

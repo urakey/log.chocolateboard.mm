@@ -9,8 +9,8 @@ body {
   color: $base-color;
   background: $base-background;
 
-  @include fontSize(15);
-  @include respondTo(medium) {
+  @include font-size(15);
+  @include media-queries(medium) {
     letter-spacing: 0;
   }
 }
@@ -23,7 +23,7 @@ input,
 textarea {
   outline: none;
   @include box-sizing(border-box);
-  @include fontSize(16);
+  @include font-size(16);
 }
 
 ::selection {
