@@ -36,9 +36,9 @@
 }
 
 .header__id {
-  @include font-size(24);
+  @include font-size(34);
   @include media-queries(medium) {
-    @include font-size(22);
+    @include font-size(30);
 
     top: 125px;
   }
@@ -49,18 +49,18 @@
   width: 100%;
   margin: 0;
   font-family: $logo-font;
-  font-weight: normal;
-  letter-spacing: .05em;
+  font-weight: bold;
+  letter-spacing: .02em;
 
   a {
-    @include background-size(contain);
+    // @include background-size(contain);
 
     display: block;
-    height: 100%;
-    text-indent: -7777px;
-    background-image: inline-image("svg/logo.svg");
-    background-position: center center;
-    background-repeat: no-repeat;
+    // height: 100%;
+    // text-indent: -7777px;
+    // background-image: inline-image("svg/logo.svg");
+    // background-position: center center;
+    // background-repeat: no-repeat;
   }
 }
 
