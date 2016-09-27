@@ -1,27 +1,27 @@
-log
+log.chocolateboard
 =========
 
 ## Configuration
 
 ```
-$ bundle install --path vendor/bundle
 $ npm install
 ```
 
 ## Start server
 
 ```
-$ bundle exec middleman server
+$ hugo server --watch
+$ gulp watch
 ```
 
 ## Build
 
 ```
-$ bundle exec middleman build
+$ npm run build
 ```
 
 ## Deploy
 
 ```
-$ bundle exec middleman deploy
+$ git push
 ```
