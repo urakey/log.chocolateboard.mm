@@ -1,7 +1,7 @@
 box: nodejs
 build:
   steps:
-    - npm-install
+    - wercker/npm-install@1.1.4
     - script:
         name: assets build
         code: |

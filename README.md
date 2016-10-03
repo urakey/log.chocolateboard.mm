@@ -10,14 +10,7 @@ $ npm install
 ## Start server
 
 ```
-$ hugo server --watch
-$ gulp watch
-```
-
-## Build
-
-```
-$ npm run build
+$ npm run start
 ```
 
 ## Deploy
