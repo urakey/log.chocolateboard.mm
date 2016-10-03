@@ -10,7 +10,7 @@ build:
       theme: cactus
       flags: --buildDrafts=true
     - script:
-        name: assets build
+        name: assets format
         code: |
           npm run format
 deploy:
