@@ -101,7 +101,10 @@ gulp.task('minify:images', function() {
 
 // -----------------------------------------------------------------------------
 // Build: レイアウト更新するときなどに実行する
-gulp.task('build', function() {
+gulp.task('init', function(callback) {
+  runSequence('copy:js', 'copy:init');
+});
+gulp.task('build', function(callback) {
   runSequence('sass', 'browserify', ['minify:css', 'minify:js', 'minify:images']);
 });
 
