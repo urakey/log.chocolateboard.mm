@@ -1,0 +1,24 @@
+box: nodejs
+build:
+  steps:
+    - wercker/npm-install@1.1.4
+    - script:
+        name: assets build
+        code: |
+          npm run build
+    - arjen/hugo-build:
+      theme: cactus
+      flags: --buildDrafts=true
+    - script:
+        name: assets format
+        code: |
+          npm run format
+deploy:
+  steps:
+    - install-packages:
+      packages: git ssh-client
+    - leipert/git-push:
+      gh_oauth: $GIT_TOKEN
+      repo: urakey/log.chocolateboard
+      branch: gh-pages
+      basedir: public

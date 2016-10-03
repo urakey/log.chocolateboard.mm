@@ -1,8 +1,7 @@
 *~
 /node_modules
-/build
-/vendor/bundle
-/.bundle
 /.sass-cache
 /.cache
 .DS_Store
+/public
+/static/assets
