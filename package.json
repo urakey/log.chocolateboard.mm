@@ -27,7 +27,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "build": "gulp build && hugo && gulp format:html && gulp format:rss && gulp clean"
+    "start": "hugo server --watch && gulp watch",
+    "build": "gulp build",
+    "format": "gulp format:html && gulp format:rss && gulp clean"
   },
   "repository": {
     "type": "git",
