@@ -2,7 +2,7 @@ Baseurl          = 'http://log.chocolateboard.net'
 LegalanguageCode = 'ja-JP'
 HasCJKLanguage   = true
 Title            = 'log.chocolateboard'
-Publishdir       = 'docs'
+Publishdir       = 'public'
 Paginate         = 12
 
 [Author]
